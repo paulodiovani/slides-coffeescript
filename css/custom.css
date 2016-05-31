@@ -5,7 +5,7 @@
 }
 
 img.no-border {
-    border: 0 !important; 
+    border: 0 !important;
     box-shadow: none !important;
 }
 
@@ -42,4 +42,15 @@ img.no-background {
 
 table {
   width: 100%
+}
+
+/* fix code overflow */
+
+.reveal pre {
+  white-space: pre-wrap;
+}
+
+.reveal pre code {
+  max-height: none;
+  overflow: hidden;
 }

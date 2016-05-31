@@ -1,9 +1,9 @@
 
 ![CoffeeScript](img/coffee.png) <!-- .element: class="no-border no-background" -->
 
-> tome um gole de café
+_tome um gole de café_
 
-<small>Versão 0.2.2</small>
+<small>Versão 0.2.3</small>
 
 ====
 <!-- .slide: class="author" -->
