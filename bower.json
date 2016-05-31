@@ -5,7 +5,14 @@
     "Paulo Diovani <paulo@diovani.com>"
   ],
   "description": "CoffeeScript is a little language that compiles into JavaScript.",
-  "main": "",
+  "main": [
+    "css/*.css",
+    "img/**/*.{jpg,png,svg}",
+    "js/*.js",
+    "cover.jpg",
+    "index.md",
+    "index.html"
+  ],
   "keywords": [
     "coffeescript",
     "coffee",
