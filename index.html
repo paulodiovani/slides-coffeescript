@@ -13,31 +13,29 @@
 
         <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 
-        <link rel="stylesheet" href="../../css/reveal.min.css">
-        <link rel="stylesheet" href="../../css/theme/blood.css" id="theme">
+        <link rel="stylesheet" href="./bower_components/reveal.js/css/reveal.css">
+        <link rel="stylesheet" href="./bower_components/reveal.js/css/theme/blood.css" id="theme">
 
         <!-- For syntax highlighting -->
-        <link rel="stylesheet" href="../../lib/css/zenburn.css">
+        <link rel="stylesheet" href="./bower_components/reveal.js/lib/css/zenburn.css">
 
-        <!-- Font awesome -->
-        <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+        <!-- Font Awesome -->
+        <link rel="stylesheet" href="./bower_components/font-awesome/css/font-awesome.min.css">
 
         <!-- custom styles for presentation -->
-        <link rel="stylesheet" href="custom.css">
+        <link rel="stylesheet" href="css/custom.css">
 
-        <!-- If the query includes 'print-pdf', include the PDF print sheet -->
+        <!-- Printing and PDF exports -->
         <script>
-            if( window.location.search.match( /print-pdf/gi ) ) {
-                var link = document.createElement( 'link' );
-                link.rel = 'stylesheet';
-                link.type = 'text/css';
-                link.href = '../../css/print/pdf.css';
-                document.getElementsByTagName( 'head' )[0].appendChild( link );
-            }
+          var link = document.createElement( 'link' );
+          link.rel = 'stylesheet';
+          link.type = 'text/css';
+          link.href = window.location.search.match( /print-pdf/gi ) ? './bower_components/reveal.js/css/print/pdf.css' : './bower_components/reveal.js/css/print/paper.css';
+          document.getElementsByTagName( 'head' )[0].appendChild( link );
         </script>
 
         <!--[if lt IE 9]>
-        <script src="../../lib/js/html5shiv.js"></script>
+        <script src="./bower_components/reveal.js/lib/js/html5shiv.js"></script>
         <![endif]-->
     </head>
 
@@ -59,55 +57,23 @@
 
         </div>
 
-        <script src="../../lib/js/head.min.js"></script>
-        <script src="../../js/reveal.js"></script>
-
+        <script src="./bower_components/reveal.js/lib/js/head.min.js"></script>
+        <script src="./bower_components/reveal.js/js/reveal.js"></script>
         <script>
+          // More info https://github.com/hakimel/reveal.js#configuration
+          Reveal.initialize({
+            history: true,
+            controls: false,
 
-            // Full list of configuration options available here:
-            // https://github.com/hakimel/reveal.js#configuration
-            Reveal.initialize({
-                controls: true,
-                progress: true,
-                history: true,
-                center: true,
-
-                theme: Reveal.getQueryHash().theme, // available themes are in /css/theme
-                transition: Reveal.getQueryHash().transition || 'default', // default/cube/page/concave/zoom/linear/fade/none
-
-                // Parallax scrolling
-                // parallaxBackgroundImage: 'https://s3.amazonaws.com/hakim-static/reveal-js/reveal-parallax-1.jpg',
-                // parallaxBackgroundSize: '2100px 900px',
-
-                // Optional libraries used to extend on reveal.js
-                dependencies: [
-                    { src: '../../lib/js/classList.js', condition: function() { return !document.body.classList; } },
-                    { src: '../../plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
-                    { src: '../../plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
-                    { src: '../../plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
-                    { src: '../../plugin/zoom-js/zoom.js', async: true, condition: function() { return !!document.body.classList; } },
-                    { src: '../../plugin/notes/notes.js', async: true, condition: function() { return !!document.body.classList; } }
-                ]
-            });
+            // More info https://github.com/hakimel/reveal.js#dependencies
+            dependencies: [
+              { src: './bower_components/reveal.js/plugin/markdown/marked.js' },
+              { src: './bower_components/reveal.js/plugin/markdown/markdown.js' },
+              { src: './bower_components/reveal.js/plugin/notes/notes.js', async: true },
+              { src: './bower_components/reveal.js/plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } }
+            ]
+          });
         </script>
-
-        <script type="text/javascript">
-            window.onload = function() {
-                if (( /pointer/gi ).test( window.location.search )) {
-                    /*
-                    My pointer sends up/down keys for navigation,
-                    So I set then do prev/next
-                     */
-                    Reveal.configure({
-                        keyboard: {
-                            //up
-                            38: 'prev',
-                            //down
-                            40: 'next'
-                        }
-                    });
-                }
-            }
-        </script>
+        <script type="text/javascript" src="js/pointer-fix.js"></script>
     </body>
 </html>
